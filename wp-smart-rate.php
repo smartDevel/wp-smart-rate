@@ -62,3 +62,35 @@ function wp_smart_rate_add_post_type() {
 
 }
 add_action( 'init', 'wp_smart_rate_add_post_type', 0 );
+add_action('add_meta_boxes', 'wp_smart_rate_add_custom_meta_box');
+function wp_smart_rate_add_custom_meta_box() {
+    add_meta_box(
+        'wp_smart_rate_editor',
+        __('Smart Rating', 'wp-smart-rate' ),
+        'wp_smart_rate_editor',
+        'wp_smart_rate', //nur anzeigen bei diesem post-type
+        'advanced', //positionierung
+        'high' //priorität
+
+    );    
+}
+function wp_smart_rate_editor ($post){
+    //echo 'Howdy admin, proudly presents our first meta-box!';
+    $output = '
+    <table class="form-table"><tbody>
+
+        <tr>
+            <th scope="row"><label for="wp_smart_rate_shortcode">' . __('Shortcode', 'wp-smart-rate') . '</label></th>
+            <td><input type="text" name="wp_smart_rate_shortcode" value="[wp_smart_rate id=\'' . $post->ID . '\']" /></td>            
+        </tr>
+        <tr>
+            <th scope="row"><label for="wp_smart_rate_title">' . __('Title', 'wp-smart-rate') . '</label></th>
+            <td><input type="text" name="wp_smart_rate_title" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_title', true )) . '" /></td>        
+        </tr>    
+    </tbody></table>    
+    ';
+    echo $output;
+    //print_r($post);
+
+}
+?>
