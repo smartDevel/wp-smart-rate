@@ -9,6 +9,14 @@ Author URI: https://ways4.eu
 Text Domain: wp-smart-rate
 Domain Path: /languages
 */
+add_action( 'admin_enqueue_scripts', 'load_admin_scripts');
+function load_admin_scripts() {
+    //registrieren des JScrpit-Files
+    wp_register_script( 'custom_admin_js', plugins_url('/assets/js/admin.js', __FILE__));
+    //einbinden des JScript-Files
+    wp_enqueue_script('custom_admin_js');
+}
+
 // Register Custom Post Type
 function wp_smart_rate_add_post_type() {
 
@@ -86,6 +94,11 @@ function wp_smart_rate_editor ($post){
         <tr>
             <th scope="row"><label for="wp_smart_rate_title">' . __('Title', 'wp-smart-rate') . '</label></th>
             <td><input type="text" name="wp_smart_rate_title" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_title', true )) . '" /></td>        
+        </tr>
+        <tr>
+            <th scope="row"><label for="wp_smart_rate_image">' . __('Image', 'wp-smart-rate') . '</label></th>
+            <td><input type="text" name="wp_smart_rate_image" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_image', true )) . '" />
+            <input type="button" name="wp_smart_rate_uploadButton" value="' . __('Upload', 'wp-smart-rate') . '"  />  </td>    
         </tr>    
     </tbody></table>    
     ';
