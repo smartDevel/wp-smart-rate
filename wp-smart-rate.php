@@ -106,8 +106,16 @@ function wp_smart_rate_editor ($post){
         <tr>
             <th scope="row"><label for="wp_smart_rate_image">' . __('Image', 'wp-smart-rate') . '</label></th>
             <td><input type="text" name="wp_smart_rate_image" id="wp_smart_rate_image" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_image', true )) . '" />
-            <input type="button" id="wp_smart_rate_uploadButton" value="' . __('Upload', 'wp-smart-rate') . '"  />  </td>    
-        </tr>    
+            <input type="button" id="wp_smart_rate_uploadButton" value="' . __('Upload', 'wp-smart-rate') . '" data-uploader_title="Choose Image" data-uploader_button_text="Save" />  </td>    
+        </tr> 
+        <tr>
+            <th scope="row"><label for="wp_smart_rate_pro">' . __('Pro', 'wp-smart-rate') . '</label></th>
+            <td><textarea name="wp_smart_rate_pro" id="wp_smart_rate_pro" rows="6">' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_pro', true )) . '</textarea></td>    
+        </tr>           
+        <tr>
+            <th scope="row"><label for="wp_smart_rate_con">' . __('Contra', 'wp-smart-rate') . '</label></th>
+            <td><textarea name="wp_smart_rate_con" id="wp_smart_rate_con" rows="6">' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_con', true )) . '</textarea></td>    
+        </tr>           
     </tbody></table>    
     ';
     echo $output;
