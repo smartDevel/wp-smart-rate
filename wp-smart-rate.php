@@ -146,7 +146,19 @@ function wp_smart_rate_editor ($post){
         <tr>
             <th scope="row"><label for="wp_smart_rate_button_background_color">' . __('Button Background Color', 'wp-smart-rate') . '</label></th>
             <td><input type="text" class="button_background_color" name="wp_smart_rate_button_background_color" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_button_background_color', true )) . '" /></td>  
-        </tr>                   
+        </tr>  
+        
+        <!--Button- Text -->
+        <tr>
+            <th scope="row"><label for="wp_smart_rate_buttontext">' . __('Button- Text', 'wp-smart-rate') . '</label></th>
+            <td><input type="text" name="wp_smart_rate_buttontext" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_buttontext', true )) . '" /></td>  
+        </tr>  
+
+        <!--Button- Link -->
+        <tr>
+            <th scope="row"><label for="wp_smart_rate_buttonlink">' . __('Button- Link', 'wp-smart-rate') . '</label></th>
+            <td><input type="text" name="wp_smart_rate_buttonlink" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_buttonlink', true )) . '" /></td>  
+        </tr>  
     </tbody></table>    
     ';
     echo $output;
