@@ -9,6 +9,12 @@ Author URI: https://ways4.eu
 Text Domain: wp-smart-rate
 Domain Path: /languages
 */
+
+//Security
+//zunächst prüfen ob die Wordpress- Konstante ABSPATH gesetzt ist, sonst unbefugter (wordpress-fremder) Zugriff und exit
+if (!defined( 'ABSPATH')) exit;
+
+
 add_action( 'admin_enqueue_scripts', 'load_admin_scripts');
 function load_admin_scripts() {
     //mediathek einbinden
@@ -94,6 +100,9 @@ function wp_smart_rate_add_custom_meta_box() {
     );    
 }
 function wp_smart_rate_editor ($post){
+
+    //Security: nonce- Field (eindeutige Nummer) wird als hidden-field gesetzt und bei save-funktion abgefragt
+    wp_nonce_field( 'wp_smart_rate_meta_box_data','wp_smart_rate_meta_box_nonce');
     
     //Hier wird der Output der metabox vorbereitet
     //Bei den in den JS-Scripten referenzierten Feldern wie wp_smart_rate_uploadButton und wp_smart_rate_image ist 
@@ -175,9 +184,33 @@ function wp_smart_rate_editor ($post){
     //print_r($post);
 
 }
-
 add_action('save_post', 'wp_smartrate_save');
 function wp_smartrate_save( $post_id) {
+
+    //Security
+
+    //prüfen, ob nonce-field im formular gesetzt ist
+    if (!isset($_POST['wp_smart_rate_meta_box_nonce'])) {
+        return;
+    }
+    else {
+        //überprüfen ob der inhalt des nonce-feldes auch korrekt übergeben wurde
+        if (!wp_verify_nonce( $_POST['wp_smart_rate_meta_box_nonce'], 'wp_smart_rate_meta_box_data' )) return;
+    }
+
+    //Wenn Autosave aktiv dann nichts machen
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE )  return;
+    
+    //Prüfen, ob der aktuelle POST-TYPE auch passt, hier: wp_smart_rate
+    if ('wp_smart_rate' == $_POST['post_type']) {
+
+        //hat der aktuelle user auch rechte zum editieren der Seite/ des posts
+        if ( (!current_user_can( 'edit_page', $post_id )) || ( !current_user_can( 'edit_post', $post_id ))) return;
+    }
+
+
+
+    //Hier beginnen die eigentlichen Save- Routinen
     //save title
     if (isset( $_POST['wp_smart_rate_title'])){
         update_post_meta( $post_id,'wp_smart_rate_title', $_POST['wp_smart_rate_title']);
@@ -203,7 +236,7 @@ function wp_smartrate_save( $post_id) {
         update_post_meta( $post_id,'wp_smart_rate_stars_ck', $_POST['wp_smart_rate_stars_ck']); // wenn checkbox  gesetzt,  wird wp_smart_rate_stars_ck in DB-Feld gesetzt.
     }
     else {
-        update_post_meta( $post_id,'wp_smart_rate_stars_ck', null); // wenn checkbox nicht gesetzt wird null in DB-Feld gesetzt.
+        update_post_meta( $post_id,'wp_smart_rate_stars_ck', null); // wenn checkbox nicht gesetzt, wird null in DB-Feld gesetzt.
     }
     
     //save percent-rating
