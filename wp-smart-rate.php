@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Smart Rating
-Plugin URI: https://ways4.eu
+Plugin URI: https://github.com/smartDevel/wp-smart-rate
 Description: Add Ratings to your post or Page with a shortcode
 Version: 1.0
 Author: Herbert Sablotny
@@ -17,6 +17,12 @@ function load_admin_scripts() {
     wp_register_script( 'custom_admin_js', plugins_url('/assets/js/admin.js', __FILE__), array('jquery'));
     //einbinden des JScript-Files
     wp_enqueue_script('custom_admin_js'); 
+    //einbinden des Color-Picker
+    wp_enqueue_style('wp-color-picker');
+    //registrieren des JScrpit-Files für color picker
+    wp_register_script( 'color_picker_js', plugins_url('/assets/js/color-picker.js', __FILE__), array('jquery', 'wp-color-picker'));
+    //einbinden des JScript-Files
+    wp_enqueue_script('color_picker_js'); 
 }
 
 
@@ -90,37 +96,62 @@ function wp_smart_rate_add_custom_meta_box() {
 function wp_smart_rate_editor ($post){
     
     //Hier wird der Output der metabox vorbereitet
-    //Bei den in den JS-Scripten referenzierten Felder wie wp_smart_rate_uploadButton und wp_smart_rate_image ist 
+    //Bei den in den JS-Scripten referenzierten Feldern wie wp_smart_rate_uploadButton und wp_smart_rate_image ist 
     // die Angabe einer gleichlautenden id erforderlich.
     $output = '
     <table class="form-table"><tbody>
-
+        
+        <!--Shortcode- Textfield -->
         <tr>
             <th scope="row"><label for="wp_smart_rate_shortcode">' . __('Shortcode', 'wp-smart-rate') . '</label></th>
             <td><input type="text" name="wp_smart_rate_shortcode" value="[wp_smart_rate id=\'' . $post->ID . '\']" /></td>            
         </tr>
+        
+        <!--Title- Textfield -->
         <tr>
             <th scope="row"><label for="wp_smart_rate_title">' . __('Title', 'wp-smart-rate') . '</label></th>
             <td><input type="text" name="wp_smart_rate_title" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_title', true )) . '" /></td>        
         </tr>
+        
+        <!--Image- URL & Upload -->
         <tr>
             <th scope="row"><label for="wp_smart_rate_image">' . __('Image', 'wp-smart-rate') . '</label></th>
             <td><input type="text" name="wp_smart_rate_image" id="wp_smart_rate_image" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_image', true )) . '" />
             <input type="button" id="wp_smart_rate_uploadButton" value="' . __('Upload', 'wp-smart-rate') . '" data-uploader_title="Choose Image" data-uploader_button_text="Save" />  </td>    
         </tr> 
+        
+        <!--Pro & Kontra Textfields -->
         <tr>
             <th scope="row"><label for="wp_smart_rate_pro">' . __('Pro', 'wp-smart-rate') . '</label></th>
             <td><textarea name="wp_smart_rate_pro" id="wp_smart_rate_pro" rows="6">' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_pro', true )) . '</textarea></td>    
-        </tr>           
+        </tr>                   
         <tr>
             <th scope="row"><label for="wp_smart_rate_con">' . __('Contra', 'wp-smart-rate') . '</label></th>
             <td><textarea name="wp_smart_rate_con" id="wp_smart_rate_con" rows="6">' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_con', true )) . '</textarea></td>    
-        </tr>           
+        </tr>
+        
+        <!--Star- Rating -->
+        <tr>
+            <th scope="row"><label for="wp_smart_rate_stars_ck">' . __('Enable *-Rating', 'wp-smart-rate') . '</label></th>
+            <td><input type="checkbox" name="wp_smart_rate_stars_ck" /></td>        
+        </tr>
+
+        <!--Percent- Rating -->
+        <tr>
+            <th scope="row"><label for="wp_smart_rate_percent">' . __('%-Rating', 'wp-smart-rate') . '</label></th>
+            <td><input type="text" name="wp_smart_rate_percent" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_percent', true )) . '" /></td>  
+        </tr>                   
+
+        <!--color- picker -->
+        <tr>
+            <th scope="row"><label for="wp_smart_rate_button_background_color">' . __('Button Background Color', 'wp-smart-rate') . '</label></th>
+            <td><input type="text" class="button_background_color" name="wp_smart_rate_button_background_color" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_button_background_color', true )) . '" /></td>  
+        </tr>                   
     </tbody></table>    
     ';
     echo $output;
 
-    //Für Analysezwecke kann der Inhalt der variablen $post wie folgt ausgegeben werden:
+    //Für Analysezwecke kann der Inhalt der Variable $post wie folgt ausgegeben werden:
     //print_r($post);
 
 }
