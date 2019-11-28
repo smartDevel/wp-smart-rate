@@ -11,17 +11,12 @@ Domain Path: /languages
 */
 add_action( 'admin_enqueue_scripts', 'load_admin_scripts');
 function load_admin_scripts() {
-/*    
+    //mediathek einbinden
     wp_enqueue_media();
     //registrieren des JScrpit-Files
-    wp_register_script( 'custom_admin_js', plugins_url('../assets/js/admin.js', __FILE__), array('jquery'));
+    wp_register_script( 'custom_admin_js', plugins_url('/assets/js/admin.js', __FILE__), array('jquery'));
     //einbinden des JScript-Files
-    wp_enqueue_script('custom_admin_js'); */
-
-    wp_enqueue_media();
-    wp_register_script( 'custom_admin_js', plugins_url( '/assets/js/admin.js', __FILE__ ), array( 'jquery' ) );
-    wp_enqueue_script( 'custom_admin_js' );
-
+    wp_enqueue_script('custom_admin_js'); 
 }
 
 
