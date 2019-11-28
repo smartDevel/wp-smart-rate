@@ -130,13 +130,21 @@ function wp_smart_rate_editor ($post){
             <td><textarea name="wp_smart_rate_con" id="wp_smart_rate_con" rows="6">' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_con', true )) . '</textarea></td>    
         </tr>
         
-        <!--Star- Rating -->
+        <!--Star- Rating checkbox -->
         <tr>
-            <th scope="row"><label for="wp_smart_rate_stars_ck">' . __('Enable *-Rating', 'wp-smart-rate') . '</label></th>
-            <td><input type="checkbox" name="wp_smart_rate_stars_ck" /></td>        
+            <th scope="row"><label for="wp_smart_rate_stars_ck">' . __('Enable *-Rating', 'wp-smart-rate') . '</label></th>';
+           // wenn checkbox leer dann ist $check gleich null
+            $check = null; //checkbox ist leer
+            //prüfen, ob Datenbankwert für checkbox gesetzt ist auf value-wert
+            if ( esc_html(get_post_meta( $post->ID, 'wp_smart_rate_stars_ck', true )) === 'wp_smart_rate_stars_ck' ){                
+                $check = 'checked'; //checkbox angehakt
+            }
+            $output .= '
+            <!-- checkbox-value wird in DB geschrieben wenn checked, sonst kommt null rein -->
+            <td><input type="checkbox" name="wp_smart_rate_stars_ck" value="wp_smart_rate_stars_ck" ' . $check . '/></td>        
         </tr>
 
-        <!--Percent- Rating -->
+        <!--Percent- Rating Text-->
         <tr>
             <th scope="row"><label for="wp_smart_rate_percent">' . __('%-Rating', 'wp-smart-rate') . '</label></th>
             <td><input type="text" name="wp_smart_rate_percent" value="' . esc_html(get_post_meta( $post->ID, 'wp_smart_rate_percent', true )) . '" /></td>  
@@ -165,6 +173,59 @@ function wp_smart_rate_editor ($post){
 
     //Für Analysezwecke kann der Inhalt der Variable $post wie folgt ausgegeben werden:
     //print_r($post);
+
+}
+
+add_action('save_post', 'wp_smartrate_save');
+function wp_smartrate_save( $post_id) {
+    //save title
+    if (isset( $_POST['wp_smart_rate_title'])){
+        update_post_meta( $post_id,'wp_smart_rate_title', $_POST['wp_smart_rate_title']);
+    }
+    
+    //save image-url
+    if (isset( $_POST['wp_smart_rate_image'])){
+        update_post_meta( $post_id,'wp_smart_rate_image', $_POST['wp_smart_rate_image']);
+    }
+    
+    //save Pro-Text
+    if (isset( $_POST['wp_smart_rate_pro'])){
+        update_post_meta( $post_id,'wp_smart_rate_pro', $_POST['wp_smart_rate_pro']);
+    }
+    
+    //save Con-Text
+    if (isset( $_POST['wp_smart_rate_con'])){
+        update_post_meta( $post_id,'wp_smart_rate_con', $_POST['wp_smart_rate_con']);
+    }
+    
+    //save Star-rating checkbox
+    if (isset( $_POST['wp_smart_rate_stars_ck'])){
+        update_post_meta( $post_id,'wp_smart_rate_stars_ck', $_POST['wp_smart_rate_stars_ck']); // wenn checkbox  gesetzt,  wird wp_smart_rate_stars_ck in DB-Feld gesetzt.
+    }
+    else {
+        update_post_meta( $post_id,'wp_smart_rate_stars_ck', null); // wenn checkbox nicht gesetzt wird null in DB-Feld gesetzt.
+    }
+    
+    //save percent-rating
+    if (isset( $_POST['wp_smart_rate_percent'])){
+        update_post_meta( $post_id,'wp_smart_rate_percent', $_POST['wp_smart_rate_percent']);
+    }
+    
+    //save color-picker
+    if (isset( $_POST['wp_smart_rate_button_background_color'])){
+        update_post_meta( $post_id,'wp_smart_rate_button_background_color', $_POST['wp_smart_rate_button_background_color']);
+    }
+    
+    //save Button-Text
+    if (isset( $_POST['wp_smart_rate_buttontext'])){
+        update_post_meta( $post_id,'wp_smart_rate_buttontext', $_POST['wp_smart_rate_buttontext']);
+    }
+    
+    //save Button-Link
+    if (isset( $_POST['wp_smart_rate_buttonlink'])){
+        update_post_meta( $post_id,'wp_smart_rate_buttonlink', $_POST['wp_smart_rate_buttonlink']);
+    }
+
 
 }
 ?>
