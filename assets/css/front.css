@@ -1,0 +1,18 @@
+/* Gesamter Rating- Bereich */
+.smart-rate-container {
+    border: 5px solid #d5d5d5; /* rahmen mit 5px, durchgezogen und farbe */
+    border-radius: 5px; /* abgerundete Ecken */
+    margin-bottom: 5px; /*Abstand nach unten 5px */
+}
+
+/* Title des Rating- Containers */
+.smart-rate-title {
+    font-size: 200%; /* doppelte Schriftgröße */
+    font-weight: bold; /* fett gedruckt */
+    padding: 10px 5px; /* Schriftabstand oben/unten 10px, seitlich 5px */
+}
+
+/*  Hintergrund des Titelbereiches der Rating Box */
+.smart-rate-title-bg {
+    background-color: #e6e6e6; /* farblich zum Rahmen abgesetzt */
+}
