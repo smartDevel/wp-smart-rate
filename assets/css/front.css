@@ -1,8 +1,12 @@
 /* Gesamter Rating- Bereich */
 .smart-rate-container {
+    overflow: hidden;
     border: 5px solid #d5d5d5; /* rahmen mit 5px, durchgezogen und farbe */
     border-radius: 5px; /* abgerundete Ecken */
     margin-bottom: 5px; /*Abstand nach unten 5px */
+    -webkit-box-shadow: 4px 7px 16px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    4px 7px 16px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         4px 7px 16px 0px rgba(50, 50, 50, 0.75); /*Schatten der Container-Box */
 }
 
 /* Title des Rating- Containers */
@@ -15,4 +19,18 @@
 /*  Hintergrund des Titelbereiches der Rating Box */
 .smart-rate-title-bg {
     background-color: #e6e6e6; /* farblich zum Rahmen abgesetzt */
+}
+.smart-rate-image {
+    width: 200px;
+}
+.image-transition {
+    margin-left: 100px;
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
+    -webkit-box-shadow: 4px 7px 16px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    4px 7px 16px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         4px 7px 16px 0px rgba(50, 50, 50, 0.75); /*Schatten der Image-Box */
 }

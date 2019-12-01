@@ -14,9 +14,19 @@ $html_output .= '
                             ' . esc_html(get_post_meta( $post_id, 'wp_smart_rate_title', true )) . '
                             </div>
                         </div>
+
+                        ';
+                        $src= esc_html(get_post_meta( $post_id, 'wp_smart_rate_image', true ));
+                        $html_output .= '
+                        <div class="smart-rate-image">
+                            <a target= "_blank" href= "' . esc_html(get_post_meta( $post_id, 'wp_smart_rate_buttonlink', true )) . '">
+                            <img src="' . $src . '" />
+                            </a> 
+                        </div>
+
+
                     </div>
 ';
 return $html_output;
 }
-
 ?>
