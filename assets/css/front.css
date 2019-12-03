@@ -21,10 +21,11 @@
     background-color: #e6e6e6; /* farblich zum Rahmen abgesetzt */
 }
 .smart-rate-image {
-    width: 200px;
+    width: 150px;
+    float: left;
 }
 .image-transition {
-    margin-left: 100px;
+    margin-left: 75px;
     -webkit-transform: scale(2);
     -moz-transform: scale(2);
     -ms-transform: scale(2);
@@ -33,4 +34,13 @@
     -webkit-box-shadow: 4px 7px 16px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    4px 7px 16px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         4px 7px 16px 0px rgba(50, 50, 50, 0.75); /*Schatten der Image-Box */
+}
+.smart-rate-pro, .smart-rate-con {
+    float: left;
+    margin-left: 10%;
+}
+.smart-rate-pro-heading, .smart-rate-con-heading {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
