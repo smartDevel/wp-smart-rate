@@ -60,6 +60,29 @@ $html_output .= '
                             $html_output .= '
                             </ul>
                         </div>
+                        ';
+                        $percent = (float) get_post_meta( $post_id, 'wp_smart_rate_percent', true );
+                        if (get_post_meta($post_id, 'wp_smart_rate_stars_ck', true ) === null) {
+                            //Balkenbewertung
+                            $html_output .= 
+                            '
+                            <div class="smart-rate-bottom">
+                                <div class="smart-rate-percent-number">' . $percent . '% </div>
+                                    <div class="smart-rate-percent">
+                                        <div class="smart-rate-bar-bg">
+                                            <div class="smart-rate-bar" style="width:' . $percent . '%"></div>
+                                        </div>
+                                    </div>
+                            </div>
+                            ';
+
+                        }
+                        else {
+                            //Sternebewertung
+
+                        }
+                        $html_output .= '
+
 
                 </div>
                     ';

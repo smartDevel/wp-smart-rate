@@ -1,6 +1,7 @@
 /* Gesamter Rating- Bereich */
 .smart-rate-container {
     overflow: hidden;
+    width: 150%;
     border: 5px solid #d5d5d5; /* rahmen mit 5px, durchgezogen und farbe */
     border-radius: 5px; /* abgerundete Ecken */
     margin-bottom: 5px; /*Abstand nach unten 5px */
@@ -43,4 +44,13 @@
     margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
+}
+
+/* Bereich beinhaltet die Sterne- und Balkenbewertung und den Button*/
+.smart-rate-bottom {
+    float: left;
+    width: 100%;
+    border-top: solid 1px #d5d5d5;
+
+
 }
