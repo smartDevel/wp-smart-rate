@@ -62,6 +62,19 @@ $html_output .= '
                         </div>
                         ';
                         $percent = (float) get_post_meta( $post_id, 'wp_smart_rate_percent', true );
+                        
+                        //umrechnung prozent in sterne
+                        $stars = round( $percent / 20, 1 );
+                        //volle sterne
+                        $starsFull = floor($stars);
+                        //halbe sterne
+                        $starsHalf = round (($stars - $starsFull),0);
+                        //leere sterne
+                        $starsEmpty = 5 - $starsFull - $starsHalf;
+
+
+
+
                         if (get_post_meta($post_id, 'wp_smart_rate_stars_ck', true ) === null) {
                             //Balkenbewertung
                             $html_output .= 
@@ -79,7 +92,30 @@ $html_output .= '
                         }
                         else {
                             //Sternebewertung
+                            $html_output .= '
+                            <div class="smart-rate-bottom">
+                            <div class="smart-rate-result">' . __('Result:', 'wp-smart-rate') . 
+                                '</div>
+                                <div class="smart-rate-star-rating" title="' . $stars . __( ' of 5 stars', 'wp-smart-rate' ) . '">
+                            ';
+                            //volle sterne
+                            for ($i = 1; $i<=$starsFull; $i++) {
+                                $html_output .= '<div class="star star-full"></div>';
+                            };
+                            //halbe sterne
+                            for ($i = 1; $i<=$starsHalf; $i++) {
+                                $html_output .= '<div class="star star-half"></div>';
+                            };
+                            //leere sterne
+                            for ($i = 1; $i<=$starsEmpty; $i++) {
+                                $html_output .= '<div class="star star-empty"></div>';
+                            };
+                            // ende div sterne bewertung
+            				$html_output .=
+			            	'</div>';
 
+                            //ende div bottom
+                            $html_output .= '</div>';
                         }
                         $html_output .= '
 
