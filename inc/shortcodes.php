@@ -71,6 +71,8 @@ $html_output .= '
                         $starsHalf = round (($stars - $starsFull),0);
                         //leere sterne
                         $starsEmpty = 5 - $starsFull - $starsHalf;
+                        //Farbe der Sterne werden entsprechend der Button Backgroundcolor gesetzt
+                        $starsColor =  get_post_meta( $post_id, 'wp_smart_rate_button_background_color', true );
 
 
 
@@ -92,11 +94,12 @@ $html_output .= '
                         }
                         else {
                             //Sternebewertung
+
                             $html_output .= '
                             <div class="smart-rate-bottom">
                             <div class="smart-rate-result">' . __('Result:', 'wp-smart-rate') . 
                                 '</div>
-                                <div class="smart-rate-star-rating" title="' . $stars . __( ' of 5 stars', 'wp-smart-rate' ) . '">
+                                <div class="smart-rate-star-rating" style="color:'. $starsColor . '" title="' . $stars . __( ' of 5 stars', 'wp-smart-rate' ) . '">
                             ';
                             //volle sterne
                             for ($i = 1; $i<=$starsFull; $i++) {
