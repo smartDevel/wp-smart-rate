@@ -120,9 +120,16 @@ $html_output .= '
                             //ende div bottom
                             $html_output .= '</div>';
                         }
-                        $html_output .= '
+                    $html_output .= '
+                    <div class="smart-rate-button-text">
+                        <a target="_blank" href="' . esc_html(get_post_meta( $post_id, 'wp_smart_rate_buttonlink', true )) . '" class="smart-rate-button-btn1">
+                        ' . esc_html(get_post_meta( $post_id, 'wp_smart_rate_buttontext', true )) . '
+                        </a>
+                    
+                    </div>'; 
 
-
+                 // Ende div container
+                $html_output .= '
                 </div>
                     ';
 return $html_output;
