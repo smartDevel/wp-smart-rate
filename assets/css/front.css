@@ -52,6 +52,7 @@
 
 /* Gesamter Rating- Bereich */
 .smart-rate-container {
+    display: none;
     overflow: hidden;
     border: 5px solid #d5d5d5; /* rahmen mit 5px, durchgezogen und farbe */
     border-radius: 5px; /* abgerundete Ecken */
@@ -79,6 +80,7 @@
 }
 .image-transition {
     margin-left: 75px;
+    margin-top: 30px;
     -webkit-transform: scale(2);
     -moz-transform: scale(2);
     -ms-transform: scale(2);

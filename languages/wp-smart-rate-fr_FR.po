@@ -1,0 +1,201 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-16 23:10+0000\n"
+"PO-Revision-Date: 2019-12-16 23:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: French (France)\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: inc/metabox.php:11
+msgctxt "Post Type General Name"
+msgid "SmartRatings"
+msgstr "SmartRatings"
+
+#: inc/metabox.php:12
+msgctxt "Post Type Singular Name"
+msgid "SmartRating"
+msgstr "SmartRating"
+
+#: inc/metabox.php:13 inc/metabox.php:14
+msgid "SmartRatings"
+msgstr "SmartRatings"
+
+#: inc/metabox.php:15
+msgid "Item Archives"
+msgstr "Rubrique Archives"
+
+#: inc/metabox.php:16
+msgid "Item Attributes"
+msgstr "Les Attributs D'Élément"
+
+#: inc/metabox.php:17
+msgid "Parent Item:"
+msgstr "Élément Parent:"
+
+#: inc/metabox.php:18
+msgid "All Items"
+msgstr "Tous Les Articles"
+
+#: inc/metabox.php:19
+msgid "Add New Item"
+msgstr "Ajouter Un Nouvel Élément"
+
+#: inc/metabox.php:20
+msgid "Add New"
+msgstr "Ajouter De Nouveaux"
+
+#: inc/metabox.php:21
+msgid "New Item"
+msgstr "Un Nouvel Élément"
+
+#: inc/metabox.php:22
+msgid "Edit Item"
+msgstr "Modifier L'Élément"
+
+#: inc/metabox.php:23
+msgid "Update Item"
+msgstr "Élément De Mise À Jour"
+
+#: inc/metabox.php:24
+msgid "View Item"
+msgstr "Afficher L'Élément"
+
+#: inc/metabox.php:25
+msgid "View Items"
+msgstr "Afficher Les Éléments"
+
+#: inc/metabox.php:26
+msgid "Search Item"
+msgstr "Élément De Recherche."
+
+#: inc/metabox.php:27
+msgid "Not found"
+msgstr "Pas trouvé"
+
+#: inc/metabox.php:28
+msgid "Not found in Trash"
+msgstr "Pas trouvé dans la Corbeille"
+
+#: inc/metabox.php:29
+msgid "Featured Image"
+msgstr "Image En Vedette"
+
+#: inc/metabox.php:30
+msgid "Set featured image"
+msgstr "Set image en vedette"
+
+#: inc/metabox.php:31
+msgid "Remove featured image"
+msgstr "Supprimer image en vedette"
+
+#: inc/metabox.php:32
+msgid "Use as featured image"
+msgstr "Utiliser comme image en vedette"
+
+#: inc/metabox.php:33
+msgid "Insert into item"
+msgstr "Insérer dans l'article"
+
+#: inc/metabox.php:34
+msgid "Uploaded to this item"
+msgstr "Téléchargés sur ce point"
+
+#: inc/metabox.php:35
+msgid "Items list"
+msgstr "Liste des articles"
+
+#: inc/metabox.php:36
+msgid "Items list navigation"
+msgstr "Liste des éléments de navigation"
+
+#: inc/metabox.php:37
+msgid "Filter items list"
+msgstr "Filtrer les éléments de la liste"
+
+#: inc/metabox.php:40
+msgid "SmartRating"
+msgstr "SmartRating"
+
+#. Description of the plugin
+#: inc/metabox.php:41
+msgid "Add Ratings to your post or Page with a shortcode"
+msgstr "Ajouter des notes à votre poste ou la Page avec un shortcode"
+
+#: inc/metabox.php:65
+msgid "Smart Rating"
+msgstr "Smart Notation"
+
+#: inc/metabox.php:86
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: inc/metabox.php:92
+msgid "Title"
+msgstr "Titre"
+
+#: inc/metabox.php:98
+msgid "Image"
+msgstr "Image"
+
+#: inc/metabox.php:100
+msgid "Upload"
+msgstr "Télécharger"
+
+#: inc/metabox.php:105 inc/shortcodes.php:37
+msgid "Pro"
+msgstr "Pro"
+
+#: inc/metabox.php:109 inc/shortcodes.php:53
+msgid "Contra"
+msgstr "Contra"
+
+#: inc/metabox.php:115
+msgid "Enable *-Rating"
+msgstr "Activer *-Cote"
+
+#: inc/metabox.php:129
+msgid "%-Rating"
+msgstr "%De cote de"
+
+#: inc/metabox.php:135
+msgid "Button Background Color"
+msgstr "Bouton Couleur D'Arrière-Plan"
+
+#: inc/metabox.php:141
+msgid "Button- Text"
+msgstr "Bouton - Texte"
+
+#: inc/metabox.php:147
+msgid "Button- Link"
+msgstr "Bouton - Lien"
+
+#: inc/shortcodes.php:103
+msgid "Result:"
+msgstr "Résultat:"
+
+#: inc/shortcodes.php:105
+msgid " of 5 stars"
+msgstr " 5 étoiles"
+
+#. Name of the plugin
+msgid "WP Smart Rating"
+msgstr "WP Smart Notation"
+
+#. Author of the plugin
+msgid "Herbert Sablotny"
+msgstr "Herbert Sablotny"
+
+#. URI of the plugin
+msgid "https://github.com/smartDevel/wp-smart-rate"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://ways4.eu"
+msgstr ""

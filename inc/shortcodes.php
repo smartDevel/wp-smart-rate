@@ -7,6 +7,9 @@ add_shortcode( 'wp_smart_rate', 'wp_smart_rate_display' );
 function wp_smart_rate_display ($atts, $content = null) {
 $post_id = $atts['id'];
 
+//prüfen, ob Bewertung auch published wurde und nicht nur als draft gespeichert, sonst abbrechen.
+if (get_post_status( $post_id ) != 'publish') return;
+
 //leeren der html-output-variablen
 $html_output = '';
 
@@ -122,7 +125,7 @@ $html_output .= '
                         }
                     $html_output .= '
                     <div class="smart-rate-button-text">
-                        <a target="_blank" href="' . esc_html(get_post_meta( $post_id, 'wp_smart_rate_buttonlink', true )) . '" class="smart-rate-button-btn1">
+                        <a target="_blank" href="' . esc_html(get_post_meta( $post_id, 'wp_smart_rate_buttonlink', true )) . '" class="smart-rate-button-btn1" style="background:' . $starsColor . ' !important">
                         ' . esc_html(get_post_meta( $post_id, 'wp_smart_rate_buttontext', true )) . '
                         </a>
                     

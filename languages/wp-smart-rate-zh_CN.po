@@ -1,0 +1,201 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-16 22:39+0000\n"
+"PO-Revision-Date: 2019-12-16 22:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese (China)\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: inc/shortcodes.php:105
+msgid " of 5 stars"
+msgstr " 5星"
+
+#: inc/metabox.php:129
+msgid "%-Rating"
+msgstr "%-评价"
+
+#: inc/metabox.php:20
+msgid "Add New"
+msgstr "添加新的"
+
+#: inc/metabox.php:19
+msgid "Add New Item"
+msgstr "添加新的项目"
+
+#. Description of the plugin
+#: inc/metabox.php:41
+msgid "Add Ratings to your post or Page with a shortcode"
+msgstr "添加评你的文章或网页有一个简"
+
+#: inc/metabox.php:18
+msgid "All Items"
+msgstr "所有项目"
+
+#: inc/metabox.php:135
+msgid "Button Background Color"
+msgstr "按钮的背景颜色"
+
+#: inc/metabox.php:147
+msgid "Button- Link"
+msgstr "按钮-Link"
+
+#: inc/metabox.php:141
+msgid "Button- Text"
+msgstr "按钮文"
+
+#: inc/metabox.php:109 inc/shortcodes.php:53
+msgid "Contra"
+msgstr "禁忌"
+
+#: inc/metabox.php:22
+msgid "Edit Item"
+msgstr "编辑项目"
+
+#: inc/metabox.php:115
+msgid "Enable *-Rating"
+msgstr "使*-评价"
+
+#: inc/metabox.php:29
+msgid "Featured Image"
+msgstr "特色映像"
+
+#: inc/metabox.php:37
+msgid "Filter items list"
+msgstr "筛选项目清单"
+
+#. Author of the plugin
+msgid "Herbert Sablotny"
+msgstr "Herbert Sablotny"
+
+#: inc/metabox.php:98
+msgid "Image"
+msgstr "图像"
+
+#: inc/metabox.php:33
+msgid "Insert into item"
+msgstr "插入项目"
+
+#: inc/metabox.php:15
+msgid "Item Archives"
+msgstr "项目的档案"
+
+#: inc/metabox.php:16
+msgid "Item Attributes"
+msgstr "项目属性"
+
+#: inc/metabox.php:35
+msgid "Items list"
+msgstr "项目名单"
+
+#: inc/metabox.php:36
+msgid "Items list navigation"
+msgstr "项目列表中导航"
+
+#: inc/metabox.php:21
+msgid "New Item"
+msgstr "新项目"
+
+#: inc/metabox.php:27
+msgid "Not found"
+msgstr "没有发现"
+
+#: inc/metabox.php:28
+msgid "Not found in Trash"
+msgstr "没有发现垃圾"
+
+#: inc/metabox.php:17
+msgid "Parent Item:"
+msgstr "父项目："
+
+#: inc/metabox.php:11
+msgctxt "Post Type General Name"
+msgid "SmartRatings"
+msgstr "SmartRatings"
+
+#: inc/metabox.php:12
+msgctxt "Post Type Singular Name"
+msgid "SmartRating"
+msgstr "SmartRating"
+
+#: inc/metabox.php:105 inc/shortcodes.php:37
+msgid "Pro"
+msgstr "Pro"
+
+#: inc/metabox.php:31
+msgid "Remove featured image"
+msgstr "去除功能的图像"
+
+#: inc/shortcodes.php:103
+msgid "Result:"
+msgstr "结果是："
+
+#: inc/metabox.php:26
+msgid "Search Item"
+msgstr "搜索项目"
+
+#: inc/metabox.php:30
+msgid "Set featured image"
+msgstr "设置功能的图像"
+
+#: inc/metabox.php:86
+msgid "Shortcode"
+msgstr "简"
+
+#: inc/metabox.php:65
+msgid "Smart Rating"
+msgstr "聪明的评价"
+
+#: inc/metabox.php:40
+msgid "SmartRating"
+msgstr "SmartRating"
+
+#: inc/metabox.php:13 inc/metabox.php:14
+msgid "SmartRatings"
+msgstr "SmartRatings"
+
+#: inc/metabox.php:92
+msgid "Title"
+msgstr "标题"
+
+#: inc/metabox.php:23
+msgid "Update Item"
+msgstr "更新项目"
+
+#: inc/metabox.php:100
+msgid "Upload"
+msgstr "上传"
+
+#: inc/metabox.php:34
+msgid "Uploaded to this item"
+msgstr "上传到这个项目"
+
+#: inc/metabox.php:32
+msgid "Use as featured image"
+msgstr "使用作为特色映像"
+
+#: inc/metabox.php:24
+msgid "View Item"
+msgstr "视项目"
+
+#: inc/metabox.php:25
+msgid "View Items"
+msgstr "查看项目"
+
+#. Name of the plugin
+msgid "WP Smart Rating"
+msgstr "WP智能的评价"
+
+#. URI of the plugin
+msgid "https://github.com/smartDevel/wp-smart-rate"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://ways4.eu"
+msgstr ""
